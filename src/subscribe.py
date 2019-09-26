@@ -4,7 +4,7 @@ import boto3
 import datetime
 
 host = '127.0.0.1'
-port = 1883
+port = 9001
 topic = 'aws-iot-demo/demo'
 dynamodb_table_name = 'aws-iot-demo'
 dynamodb = boto3.resource(
@@ -41,7 +41,7 @@ def on_message(client, userdata, msg):
 
 if __name__ == '__main__':
 
-    client = mqtt.Client(protocol=mqtt.MQTTv311)
+    client = mqtt.Client(transport="websockets")
 
     client.on_connect = on_connect
     client.on_message = on_message

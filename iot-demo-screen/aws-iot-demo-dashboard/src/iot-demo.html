@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sensor Data Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+      html, body {
+        height: 100%;
+        background-color: #FFFFFF;
+      }
+
+      body {
+        /* background-color: #000000; */
+        margin: 0;
+        font-family: Helvetica, sans-serif;;
+        overflow: hidden;
+      }
+
+      #back-area {
+        background-image: url("./images/Japan.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 750px;
+        height: 100%;
+      }
+
+      a {
+        /* color: #ffffff; */
+      }
+
+      #info {
+        position: absolute;
+        width: 100%;
+        /* color: #ffffff; */
+        padding: 5px;
+        font-family: Monospace;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+      }
+
+      #menu {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .element {
+        width: 400px;
+        height: 200px;
+        box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+        background-color: rgba(0,127,127,0.75);
+        border: 1px solid rgba(127,255,255,0.25);
+        text-align: center;
+        cursor: default;
+      }
+
+      .element_error {
+        background-color: rgba(255,127,127,0.75) !important;
+      }
+
+      .element:hover {
+        box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+        border: 1px solid rgba(127,255,255,0.75);
+      }
+
+        .element .number {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-size: 48px;
+          color: rgba(127,255,255,0.75);
+        }
+
+        .element .symbol {
+          position: absolute;
+          top: 50px;
+          left: 0px;
+          right: 0px;
+          font-size: 100px;
+          font-weight: bold;
+          color: rgba(255,255,255,0.75);
+          text-shadow: 0 0 10px rgba(0,255,255,0.95);
+        }
+
+        .element .details {
+          position: absolute;
+          bottom: 15px;
+          left: 0px;
+          right: 0px;
+          font-size: 12px;
+          color: rgba(127,255,255,0.75);
+        }
+
+      button {
+        color: blue;
+        background: transparent;
+        outline: 1px solid blue;
+        border: 0px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgba(0,255,255,0.5);
+      }
+      button:active {
+        color: #000000;
+        background-color: rgba(0,255,255,0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="../js/three.min.js"></script>
+    <script type="text/javascript" src="../js/libs/tween.min.js"></script>
+    <script type="text/javascript" src="../js/controls/TrackballControls.js"></script>
+    <script type="text/javascript" src="../js/renderers/CSS3DRenderer.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/bundle.js"></script>
+
+    <div id="container"></div>
+    <div id="menu">
+      <input id="table" type="hidden"></input>
+      <!-- <button id="sphere">SPHERE</button>
+      <button id="helix">HELIX</button>
+      <button id="grid">GRID</button> -->
+      <!-- <button id="getData">Get Data from DynamoDB</button>
+      <button id="get1minData">Get 1min Data</button> -->
+    </div>
+  </body>
+</html>
